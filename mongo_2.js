@@ -91,3 +91,91 @@
 //     db.close();
 //   });
 // });
+// var MongoClient = require('mongodb').MongoClient;
+// var url = "mongodb://127.0.0.1:27017/";
+//
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("NodeStudent");
+//   var myquery = { science_marks: '45' };
+//   var newvalues = { $set: {name: "Lucky", Marks_science: '75' } };
+//   dbo.collection("NodeStudentDetails").updateOne(myquery, newvalues, function(err, res) {
+//     if (err) throw err;
+//     console.log("1 document updated");
+//     db.close();
+//   });
+// });
+// var MongoClient = require('mongodb').MongoClient;
+// var url = "mongodb://localhost:27017/";
+//
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("NodeStudent");
+//   dbo.collection("NodeStudentDetails").find({maths_marks:{$gt:'50'}, science_marks: {$gt:'50'}, english_marks: {$gt:'50'}}).toArray(function(err, result) {
+//     if (err) throw err;
+//     console.log(result);
+//     db.close();
+//   });
+// });
+// var MongoClient = require('mongodb').MongoClient;
+// var url = "mongodb://localhost:27017/";
+//
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("NodeStudent");
+//   dbo.collection("NodeStudentDetails").find({maths_marks:{$lt:'50'}, english_marks: {$gt:'50'}}).toArray(function(err, result) {
+//     if (err) throw err;
+//     console.log(result);
+//     db.close();
+//   });
+// });
+
+//ERRORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR//
+// var MongoClient = require('mongodb').MongoClient;
+// var url = "mongodb://localhost:27017/";
+//
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("NodeStudent");
+//   dbo.collection("NodeStudentDetails").find({maths_marks:{$lt:'40'}, science_marks:{$lt:'40'}}).toArray(function(err, result) {
+//     if (err) throw err;
+//     console.log(result);
+//     db.close();
+//   });
+// });
+// var MongoClient = require('mongodb').MongoClient;
+// var url = "mongodb://localhost:27017/";
+//
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("NodeStudent");
+//   dbo.collection("NodeStudentDetails").update({name: "John"}, {$rename: {"english_marks":"science_marks"}}, function(err, result) {
+//     if (err) throw err;
+//     console.log(result);
+//     db.close();
+//   });
+// });
+// var MongoClient = require('mongodb').MongoClient;
+// var url = "mongodb://localhost:27017/";
+//
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("NodeStudent");
+//   dbo.collection("NodeStudentDetails").remove({name: "Kumaran"}, function(err, result) {
+//     if (err) throw err;
+//     console.log(result);
+//     db.close();
+//   });
+// });
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://localhost:27017/";
+
+MongoClient.connect(url, function(err, db) {
+  if (err) throw err;
+  var dbo = db.db("NodeStudent");
+  dbo.collection("NodeStudentDetails").find({science_marks:''}, {name:'Aruli'}).toArray(function(err, result) {
+    if (err) throw err;
+    console.log(result);
+    db.close();
+  });
+});
